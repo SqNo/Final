@@ -1,0 +1,27 @@
+{% extends 'manager/index.html.twig' %}
+{% block body %}
+
+    <div>
+        <h1>LISTE DES INTERVENANTS</h1>
+    </div>
+
+    <div>
+        {% for participant in participants %}
+            <ul>
+                <li>  nom : {{ participant.name }} </li>
+            </ul>
+            <form action="{{ path('manager_link_participant_with_guarantee', { participant : "bob" , guarantee : "aze" }) }}">
+                <select>
+                    {% for guarantee in guarantees %}
+                        <option>
+                            {{ guarantee.id }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button>LIER A UNE GARANTIE </button>
+            </form>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+admin:
+  resource: './routes/admin_routes.yml'
+  prefix:   /admin
+
+siege:
+  resource: './routes/siege_routes.yml'
+  prefix:   /siege
+
+manager:
+  resource: './routes/manager_routes.yml'
+  prefix:   /gestionnaire
+
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+
+register:
+  path: /register
+  controller: App\Controller\SecurityController::register
+
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+change_password:
+  path: /changepass
+  controller: App\Controller\SecurityController::changepass
+
+logout:
+  path: /logout

@@ -1,0 +1,141 @@
+<div class="sidebar" data-color="azure" data-background-color="black" data-image="">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo pl-5">
+        <a href="{{ path('logout') }}" class="simple-text logo-normal">
+            Deconnexion
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="" />
+            </div>
+            <div class="user-info">
+                <a data-toggle="collapse" href="#collapseExample" class="username">
+              <span>
+                {{ app.user.username }}
+                <b class="caret"></b>
+              </span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('admin_self_profile') }}">
+                                <span class="sidebar-mini"> MP </span>
+                                <span class="sidebar-normal"> Mon Profil </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="sidebar-mini"> S </span>
+                                <span class="sidebar-normal"> Paramètres </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                    <i class="material-icons">face</i>
+                    <p> Comptes utilisateurs
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_create_user') }}">
+                                <span class="sidebar-mini"> U </span>
+                                <span class="sidebar-normal"> Creer un compte </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_list_users') }}">
+                                <span class="sidebar-mini"> U </span>
+                                <span class="sidebar-normal"> Liste des comptes </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#pagesExamples2">
+                    <i class="material-icons">face</i>
+                    <p> Gestion des contrats
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples2">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_create_contract') }}">
+                                <span class="sidebar-mini"> U </span>
+                                <span class="sidebar-normal"> Créer un contrat </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_list_contract') }}">
+                                <span class="sidebar-mini"> U </span>
+                                <span class="sidebar-normal"> Liste des contrats </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+            <a class="nav-link" data-toggle="collapse" href="#pagesExamples3">
+                <i class="material-icons">face</i>
+                <p> Gestion des garanties
+                    <b class="caret"></b>
+                </p>
+            </a>
+            <div class="collapse" id="pagesExamples3">
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('admin_create_guarantee') }}">
+                            <span class="sidebar-mini"> G </span>
+                            <span class="sidebar-normal"> Créer une garantie </span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('admin_list_guarantee') }}">
+                            <span class="sidebar-mini"> G </span>
+                            <span class="sidebar-normal"> Voir toutes les garanties </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#pagesExamples4">
+                    <i class="material-icons">face</i>
+                    <p> Gestion des Sinistres
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples4">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_create_sinister') }}">
+                                <span class="sidebar-mini"> S </span>
+                                <span class="sidebar-normal"> Créer un sinistre </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin_list_sinister') }}">
+                                <span class="sidebar-mini"> S </span>
+                                <span class="sidebar-normal"> Voir toutes les sinistres </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

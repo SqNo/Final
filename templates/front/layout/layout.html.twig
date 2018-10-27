@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<title>Hello !</title>
+<body>
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="{{ asset('build/css/app.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block header %}
+    {{ include('front/layout/header.html.twig') }}
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block footer %}
+    {{ include('front/layout/footer.html.twig') }}
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

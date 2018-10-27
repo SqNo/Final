@@ -1,0 +1,26 @@
+{% extends 'admin/layout/layout.html.twig' %}
+{% block body %}
+
+    <h1> USER LIST </h1>
+
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div>
+        {% for user in users %}
+        <ul>
+            <li>  Nom du compte : {{ user.username }} </li>
+            <li>  Droits : {{ user.discr }} </li>
+            <li>  Mot de passe : {{ user.password  }} </li>
+        </ul>
+            <form>
+                <button class="ml-2" type="submit" formaction="{{ path('admin_delete_user', { 'id': user.id }) }}"> DELETE </button>
+                <button class="ml-1" type="submit" formaction="{{ path('admin_edit_user', { 'id': user.id }) }}"> EDIT </button>
+            </form>
+        {% endfor %}
+    </div>
+
+{% endblock %}

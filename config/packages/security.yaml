@@ -1,0 +1,30 @@
+security:
+
+  providers:
+    capb_db:
+      entity:
+        class: App\Entity\User
+        property: username
+
+  firewalls:
+    main:
+      anonymous: ~
+      provider: capb_db
+      logout:
+        path:   /logout
+        target: /
+      form_login:
+        check_path: login
+
+  encoders:
+     App\Entity\User: bcrypt
+
+  role_hierarchy:
+       ROLE_ADMIN:       ROLE_USER ROLE_AGENCY ROLE_SUBSCRIBER
+       ROLE_AGENCY:       ROLE_USER
+       ROLE_SUBSCRIBER:       ROLE_USER
+
+  access_control:
+#       - { path: ^/admin, roles: ROLE_ADMIN }
+       - { path: ^/subscriber, roles: ROLE_SUBSCRIBER }
+       - { path: ^/agency, roles: ROLE_AGENCY }

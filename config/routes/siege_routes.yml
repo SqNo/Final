@@ -1,0 +1,11 @@
+siege_index:
+  path: /
+  controller: App\Controller\SiegeController::index
+
+siege_self_profile:
+  path: /profil
+  controller: App\Controller\SiegeController::editSelfProfile
+
+siege_manager_list:
+  path: /gestionnaires
+  controller: App\Controller\SiegeController::managerList

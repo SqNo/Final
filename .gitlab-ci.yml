@@ -1,0 +1,58 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  STAGING_DIRECTORY_URL: "/home/peritislab/domains/capb.peritislab.fr/public_html/capb"
+  STAGING_TMP_URL: "/home/peritislab/domains/capb.peritislab.fr/public_html/_tmp"
+  STAGING_OLD_URL: "/home/peritislab/domains/capb.peritislab.fr/public_html/_old"
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - build
+  script :
+    - rm .env.dev
+    - cp .env.recette .env
+    - composer install
+    - npm install
+    - npm run build
+    - rsync -a . build --exclude node_modules --exclude .git
+  cache:
+    paths:
+    - node_modules/
+    - vendor/
+    - bower_components/
+  only:
+    - recette
+  tags:
+    - recette
+    - ssh
+
+deploy_staging:
+  stage: deploy
+  script:
+    - sudo rm -rf $STAGING_TMP_URL
+    - sudo rm -rf $STAGING_OLD_URL
+    - mkdir $STAGING_TMP_URL
+    - cp -r build/. $STAGING_TMP_URL
+    - mv $STAGING_DIRECTORY_URL $STAGING_OLD_URL
+    - mv $STAGING_TMP_URL $STAGING_DIRECTORY_URL
+    - cd $STAGING_DIRECTORY_URL
+    - sudo chmod -R 777 var/log || true && chmod -R 777 var/cache || true
+    - sudo chmod -R 777 var/
+    - sudo setfacl -dR -m u::rwX var/cache var/log
+    - php bin/console c:c --env dev && php bin/console c:c --env prod
+    - php bin/console d:s:u --force
+    - sudo rm -rf $STAGING_OLD_URL
+    - sudo chmod -R 777 var/
+
+  environment:
+    name: recette
+    url: http://capb.peritislab.fr
+  only:
+    - recette
+  tags:
+    - recette
+    - ssh

@@ -1,0 +1,18 @@
+{% extends 'admin/layout/layout.html.twig' %}
+{% block body %}
+
+    <div>
+        <h1>LISTE DES GARANTIES</h1>
+    </div>
+
+    <div>
+        {% for guarantee in guarantees %}
+            <ul>
+                <li>  Nom : {{ guarantee.name}} </li>
+                <li>  Date début : {{ guarantee.startDate|date('d/m/y') }} </li>
+                <li>  Date fin : {{ guarantee.endDate|date('d/m/y') }} </li>
+            </ul>
+        {% endfor %}
+    </div>
+
+{% endblock %}

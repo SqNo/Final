@@ -1,0 +1,18 @@
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block sidebar %}
+    {{ include('manager/sidebar.html.twig') }}
+{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="d-none">
+        {{ form_row(form.Siege) }}
+    </div>
+    {{ form_widget(form) }}
+        <button type="submit">Sauvegarder!</button>
+    {{ form_end(form) }}
+
+{% endblock %}

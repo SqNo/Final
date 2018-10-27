@@ -1,0 +1,19 @@
+{% extends 'admin/layout/layout.html.twig' %}
+{% block body %}
+
+    <div>
+        <h1>LISTE DES CONTRATS</h1>
+    </div>
+
+    <div>
+        {% for contract in contracts %}
+            <ul>
+                <li>  Numero : {{ contract.number}} </li>
+                <li>  Description : {{ contract.description }} </li>
+                <li>  Date début : {{ contract.startDate|date('d/m/y') }} </li>
+                <li>  Date fin : {{ contract.endDate|date('d/m/y') }} </li>
+            </ul>
+        {% endfor %}
+    </div>
+
+{% endblock %}

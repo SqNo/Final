@@ -1,0 +1,11 @@
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block sidebar %}
+    {{ include('manager/sidebar.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        Bonjour, {{ app.user.username }}
+    </div>
+{% endblock %}

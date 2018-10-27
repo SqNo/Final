@@ -1,0 +1,53 @@
+{% extends 'Admin/Common/layout.html.twig' %}
+{% block body %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-header card-header-icon card-header-rose">
+                            <div class="card-icon">
+                                <i class="material-icons">assignment</i>
+                            </div>
+                            <h4 class="card-title ">Détails de l'utilisateur</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                    <th>
+                                        <strong> Type </strong>
+                                    </th>
+                                    <th class="text-center">
+                                        Valeur
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                    {% for key,value in user %}
+                                        <tr>
+                                            <td>
+                                                <strong>{{ key }}</strong>
+                                            </td>
+                                            <td class=" text-center">
+                                                {% if value == "" %}
+                                                    {#<i class="material-icons">warning</i>#}
+                                                    <div class="badge badge-warning">
+                                                        <i class="fa fa-warning"></i>&nbsp;
+                                                        Information non renseignée sur le CRM
+                                                    </div>
+                                                {% else %}
+                                                    {{ value }}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

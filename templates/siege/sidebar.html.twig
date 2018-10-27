@@ -1,0 +1,52 @@
+<div class="sidebar" data-color="azure" data-background-color="black" data-image="">
+    <div class="logo pl-5">
+        <a href="{{ path('logout') }}" class="simple-text logo-normal">
+            Deconnexion
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="" />
+            </div>
+            <div class="user-info">
+                <a data-toggle="collapse" href="#collapseExample" class="username">
+              <span>
+                SUB
+                <b class="caret"></b>
+              </span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('siege_self_profile') }}">
+                                <span class="sidebar-mini"> MP </span>
+                                <span class="sidebar-normal"> Mon Profil </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                    <i class="material-icons">face</i>
+                    <p> Gestionnaires
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('siege_manager_list') }}">
+                                <span class="sidebar-mini"> S </span>
+                                <span class="sidebar-normal">Liste de vos Gestionnaires</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

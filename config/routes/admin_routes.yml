@@ -1,0 +1,55 @@
+admin_index:
+  path: /
+  controller: App\Controller\AdminController::index
+
+admin_create_user:
+  path: /creer
+  controller: App\Controller\AdminController::createUser
+
+admin_delete_user:
+  path: /delete/{id}
+  controller: App\Controller\AdminController::deleteUser
+
+admin_list_users:
+  path: /liste
+  controller: App\Controller\AdminController::listUsers
+
+admin_edit_user:
+  path: /edit/{id}
+  controller: App\Controller\AdminController::editUser
+
+admin_list_contract:
+  path: /contrats/liste-contrat
+  controller: App\Controller\AdminController::listContract
+
+admin_create_contract:
+  path: /contrats/creer-contrat
+  controller: App\Controller\AdminController::createContract
+
+admin_list_guarantee:
+  path: /garanties/liste-garantie
+  controller: App\Controller\AdminController::listGuarantee
+
+admin_create_guarantee:
+  path: /garanties/creer-garantie
+  controller: App\Controller\AdminController::createGuarantee
+
+admin_list_sinister:
+  path: /sinistres/liste-sinistres
+  controller: App\Controller\AdminController::listSinister
+
+admin_create_sinister:
+  path: /sinistres/creer-sinistre
+  controller: App\Controller\AdminController::createSinister
+
+admin_list_action:
+  path: /actions/liste-action
+  controller: App\Controller\AdminController::listAction
+
+admin_create_action:
+  path: /actions/creer-action
+  controller: App\Controller\AdminController::createAction
+
+admin_self_profile:
+  path: /profil
+  controller: App\Controller\AdminController::editSelfProfile

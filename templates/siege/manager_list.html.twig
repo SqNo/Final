@@ -1,0 +1,20 @@
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block sidebar %}
+    {{ include('siege/sidebar.html.twig') }}
+{% endblock %}
+
+{% block body %}
+
+        <h2> LISTE DE VOS GESTIONNAIRES</h2>
+
+        <div>
+            {% for manager in managers %}
+                <h3>  Login du compte : {{ manager.username }} </h3>
+                <ul>
+                    <li>  Droits : {{ manager.discr }} </li>
+                </ul>
+            {% endfor %}
+        </div>
+
+{% endblock %}

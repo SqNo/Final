@@ -1,0 +1,19 @@
+manager_index:
+  path: /
+  controller: App\Controller\ManagerController::index
+
+manager_create_participant:
+  path: /intervenants/creation
+  controller: App\Controller\ManagerController::createParticipant
+
+manager_list_participant:
+  path: /intervenants/liste
+  controller: App\Controller\ManagerController::listParticipant
+
+manager_link_participant_with_guarantee:
+  path: /intervenants/link/{id}
+  controller: App\Controller\ManagerController::linkParticipantWithGuarantee
+
+manager_self_profile:
+    path: /profil
+    controller: App\Controller\ManagerController::editSelfProfile
